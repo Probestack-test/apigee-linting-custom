@@ -25,21 +25,21 @@ describe('PS-BN001 MandatoryPolicy run on fixture bundle', function () {
     var bundle = new Bundle(configuration);
     bl.executePlugin(pluginPath, bundle);
     var report = getReportByRuleId(ruleId, bundle.getReport());
-    assert.equal(report[0].message, 'Policy "QA-checkQuota" of type "Quota" is not attached to required flow "ProxyEndpoint:PreFlow:Response"');
+    assert.equal(report[0].message, 'Policy "QA-checkQuota" of type "Quota" is not attached to required flow ProxyEndpoint:PreFlow:Response');
     assert.equal(report[0].severity, 2);
     done();
   });
 });
 function getReportByRuleId(ruleId, bundleReport) {
   var jsimple = bl.getFormatter('json.js');
-  console.log("getReportByRuleId:", jsimple(bundleReport));
+  // console.log("getReportByRuleId:", jsimple(bundleReport));
   const jsonReport = JSON.parse(jsimple(bundleReport)),
     reports = [];
   for (let r of jsonReport) {
     for (let j of r.messages) {
       if (j.ruleId === ruleId) {
         reports.push(j);
-        console.log("Found report for ruleId", ruleId, j);
+        // console.log("Found report for ruleId", ruleId, j);
       }
     }
   }

@@ -55,7 +55,7 @@ const mandatoryPolicies = rawEntries
   })
   .filter(Boolean);
 
-console.log('Mandatory Policies configured:', mandatoryPolicies);
+// console.log('Mandatory Policies configured:', mandatoryPolicies);
 
 // ------------------------------------------------------------
 // Rule logic
@@ -72,9 +72,7 @@ const onBundle = function (bundle, cb) {
   }
 
   mandatoryPolicies.forEach(rule => {
-    console.log(
-      `Checking ${rule.type}:${rule.name} at ${rule.requiredFlow}`
-    );
+    // console.log(`Checking ${rule.type}:${rule.name} at ${rule.requiredFlow}`);
 
     let policyFound = false;
     let flowMatched = false;
@@ -86,14 +84,12 @@ const onBundle = function (bundle, cb) {
         // 🔑 THIS IS THE CORRECT API
         policy.getSteps().forEach(step => {
           const flowName = step.getFlowName();
-          console.log(
-            `  Found attachment at: ${flowName}`
-          );
+          // console.log(`  Found attachment at: ${flowName}`);
           var flowNameValue = flowName.split('#')[1];
           var flowNameParts = "document:" + rule.requiredFlow + ":" + rule.name;
           // console.log("    Comparing flowNameValue:", flowNameValue, "with flowNameParts:", flowNameParts);
           if (flowNameValue === flowNameParts) {
-            // console.log(`    -> MATCHED required flow: ${rule.requiredFlow}`);
+            console.log(`    -> MATCHED required flow: ${rule.requiredFlow}`);
             flowMatched = true;
           }
         });

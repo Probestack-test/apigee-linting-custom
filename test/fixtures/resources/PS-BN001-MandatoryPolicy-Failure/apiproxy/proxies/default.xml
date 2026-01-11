@@ -4,7 +4,7 @@
       <Step><Name>VA-verifyClientId</Name></Step>
     </Request>
     <Response>
-      <Step><Name>QA-checkQuota</Name></Step>
+      <!-- <Step><Name>QA-checkQuota</Name></Step> -->
     </Response>
   </PreFlow>
 
