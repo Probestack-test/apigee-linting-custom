@@ -1,0 +1,5 @@
+# .mocharc.yml
+spec:
+  # - 'test/fixtures/*.js'
+  # - 'test/specs/*.js'
+  - 'test/specs/PS-BN001-MandatoryPolicy.js'

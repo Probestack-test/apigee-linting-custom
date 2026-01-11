@@ -1,0 +1,22 @@
+<APIProxy name="ApiKeySample">
+  <!-- This is the root of the application -->
+  <Description>A sample application that adds API key-based authentication</Description>
+  <DisplayName>ApiKeySample</DisplayName>
+  <CreatedAt>1697019839764</CreatedAt>
+  <BasePaths>
+    <BasePath>/v1/apikeysample</BasePath>
+  </BasePaths>
+  <LastModifiedAt>1697019839764</LastModifiedAt>
+  <Policies>
+    <Policy name="VA-VerifyAPIKey"></Policy>
+    <Policy name="QA-QuotaPolicy"></Policy>
+  </Policies>
+  <ProxyEndpoints>
+    <ProxyEndpoint name="default">
+      </ProxyEndpoint>
+  </ProxyEndpoints>
+  <TargetEndpoints>
+    <TargetEndpoint name="default">
+      </TargetEndpoint>
+  </TargetEndpoints>
+</APIProxy>

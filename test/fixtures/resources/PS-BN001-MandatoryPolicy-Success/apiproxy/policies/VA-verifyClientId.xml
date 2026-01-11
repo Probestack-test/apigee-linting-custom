@@ -1,0 +1,3 @@
+<VerifyAPIKey name="ValidateAPIKey">
+  <APIKey ref="request.queryparam.apikey"/>
+</VerifyAPIKey>

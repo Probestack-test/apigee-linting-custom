@@ -1,0 +1,12 @@
+{
+    "PS-BN001": {
+        "description": "Ensures that mandatory policies are present in the API proxy.",
+        "enabled": true,
+        "config": {
+            "mandatoryPoliciesAndFlow": [
+                "VerifyAPIKey|VA-verifyClientId|ProxyEndpoint:PreFlow:Request",
+                "Quota|QA-checkQuota|ProxyEndpoint:PreFlow:Response"
+            ]
+        }
+    }
+}
